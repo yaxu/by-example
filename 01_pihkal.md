@@ -10,7 +10,7 @@ Start-up procedure:
 
 ```
 -- If you see a line of code with two dashes at the start like this, it’s called a comment.
--- This is text that the computer will ignore, so you can annotate your code.
+-- This is text that the computer will always ignore, so you can annotate your code.
 ```
 
 
