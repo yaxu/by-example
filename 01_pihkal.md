@@ -108,7 +108,7 @@ Or you can `solo` one channel - but be warned, you can’t `unsolo`
 
 
 ```
-d1 $ sound "arpy ~ arpy:2"
+d1 $ sound "arpy cp arpy:2"
 d2 $ sound "sn sn:2 bd sn”
 solo $ d2 $ sound "sn sn:2 bd sn”
 ```
