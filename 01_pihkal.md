@@ -13,20 +13,13 @@ Start-up procedure:
 -- This is text that the computer will always ignore, so you can annotate your code.
 ```
 
+# Basic patterns
 
-------------------------------------------------------------------------------------------------------------------------------------
-*****************************************************************************************************************
-2. BASIC PATTERNS
-_______________________________________________________________________________
-*****************************************************************************************************************
-------------------------------------------------------------------------------------------------------------------------------------
+The basic format for making sound in Tidal looks like this
 
-
--- The basic format for making sound in Tidal looks like this
-
-
-d1 $ sound “bd”
-
+```
+d1 $ sound "bd”
+```
 
 
 -- Stop making a sound using ‘silence’
@@ -89,7 +82,7 @@ cps 0.6
 
 -- ***health warning*** this will change in the new Tidal
 -- Channels will be called whatever you like as long as you use speech marks.  
--- e.g. “d1”, “kick”, “hippopotamus” etc
+-- e.g. "d1”, "kick”, "hippopotamus” etc
 
 
 d2 $ sound "sn sn:2 sn bd sn"
@@ -122,10 +115,10 @@ cps 0.6
 d1 $ sound "arpy ~ arpy:2"
 
 
-d2 $ sound “sn sn:2 bd sn”
+d2 $ sound "sn sn:2 bd sn”
 
 
-solo $ d2 $ sound “sn sn:2 bd sn”
+solo $ d2 $ sound "sn sn:2 bd sn”
 
 
 --Let’s try adding some more variety to our patterns
@@ -162,7 +155,7 @@ d1 $ sound "[[bd [bd bd bd bd]] bd sn:5] [bd sn:3]"
 -- You can get a similar effect using *
 
 
-d1 $ sound “bd sn*2”
+d1 $ sound "bd sn*2”
 
 
 
@@ -170,7 +163,7 @@ d1 $ sound “bd sn*2”
 -- Or the opposite using /
 
 
-d1 $ sound “bd sn/2”
+d1 $ sound "bd sn/2”
 
 
 
@@ -178,13 +171,13 @@ d1 $ sound “bd sn/2”
 -- We can also schedule patterns across cycles using < and >
 
 
-d1 $ sound “bd sn”
+d1 $ sound "bd sn”
 
 
-d1 $ sound “<bd sn> <~ [cp cp]>”
+d1 $ sound "<bd sn> <~ [cp cp]>”
 
 
-d1 $ sound “<bd sn> <~ [cp cp]> <bd [cp cp]>”
+d1 $ sound "<bd sn> <~ [cp cp]> <bd [cp cp]>”
 
 
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -212,7 +205,7 @@ d1 $ sound "drum drum drum drum" # vowel "a o e e"
 
 
 
--- Or we can use “<>” to schedule across cycles
+-- Or we can use "<>” to schedule across cycles
 
 
 d1 $ sound "drum drum drum drum" # vowel "<a o e e>"
@@ -329,13 +322,13 @@ d1 $ fast 0.5 $ sound "arpy arpy:1 arpy:2 arpy:3"
 -- ‘Hurry’ is similar to fast, but also applies a speed transformation
 
 
-d1 $ sound “arpy arpy arpy:1 arpy:2”
+d1 $ sound "arpy arpy arpy:1 arpy:2”
 
 
-d1 $ hurry 2 $ sound “arpy arpy arpy:1 arpy:2”
+d1 $ hurry 2 $ sound "arpy arpy arpy:1 arpy:2”
 
 
-d1 $ hurry 0.5 $ sound “arpy arpy arpy:1 arpy:2”
+d1 $ hurry 0.5 $ sound "arpy arpy arpy:1 arpy:2”
 
 
 
@@ -370,7 +363,7 @@ d1 $ every 4 (density 2) $ sound "arpy arpy:1 arpy:2 arpy:3"
 -- or you could schedule an effect using #
 
 
-d1 $ every 4 (# vowel “a o”) $ sound "arpy arpy:1 arpy:2 arpy:3"
+d1 $ every 4 (# vowel "a o”) $ sound "arpy arpy:1 arpy:2 arpy:3"
 
 
 
@@ -380,10 +373,10 @@ d1 $ every 4 (# vowel “a o”) $ sound "arpy arpy:1 arpy:2 arpy:3"
 
 d1 $ sound "arpy arpy:1 arpy:2 arpy:3"
 
-d1 $ jux (rev) $ sound “arpy arpy:1 arpy:2 arpy:3"
+d1 $ jux (rev) $ sound "arpy arpy:1 arpy:2 arpy:3"
 
 
-d1 $ jux (hurry 2) $ sound “arpy arpy arpy:1 arpy:2”
+d1 $ jux (hurry 2) $ sound "arpy arpy arpy:1 arpy:2”
 
 
 
@@ -391,7 +384,7 @@ d1 $ jux (hurry 2) $ sound “arpy arpy arpy:1 arpy:2”
 -- ‘Chunk’ applies a transformation or an effect to the first part of the pattern only
 
 
-d1 $ chunk 4 (hurry 4) $ sound  “arpy arpy:1 arpy:2 arpy:3"
+d1 $ chunk 4 (hurry 4) $ sound  "arpy arpy:1 arpy:2 arpy:3"
 
 
 
@@ -403,9 +396,9 @@ d1 $ jux (rev . (slow 1.5)) $ sound "arpy arpy:1 arpy:2 arpy:3"
 -- Remember that everything is a pattern so we can apply these transformations to our effects too!
 
 
-d1 $ sound “jvbass [jvbass jvbass] jvbass ~” # up “1 [3 5] 7”
+d1 $ sound "jvbass [jvbass jvbass] jvbass ~” # up "1 [3 5] 7”
 
-d1 $ sound “jvbass [jvbass jvbass] jvbass ~” # iter 3 (up “1 [3 5] 7”)
+d1 $ sound "jvbass [jvbass jvbass] jvbass ~” # iter 3 (up "1 [3 5] 7”)
 
 
 
@@ -442,7 +435,7 @@ d1 $ n (run 4) # sound "arpy"
 -- or we can use ‘..’
 
 
-d1 $ n “0..4” # sound "arpy"
+d1 $ n "0..4” # sound "arpy"
 
 -- Symmetry
 
@@ -530,7 +523,7 @@ d1 $ sound "arpy*8" # n (irand 16)
 -- ‘Rand’ generates a random decimal between 0 and 1
 
 
-d1 $ sound “tink*16” # gain rand
+d1 $ sound "tink*16” # gain rand
 
 
 -- You can use ‘degradeBy’ to remove random elements.  The number indicates how likely a smaple is to play
@@ -626,7 +619,7 @@ d1 $ loopAt 8 $ sound "bev"
 -- As always we can add patterns and transformations to these functions, or combine them for interesting effects
 
 
-d1 $ loopAt “<8 4 16>” $ chop 64 $  sound "bev*4" # cut 1
+d1 $ loopAt "<8 4 16>” $ chop 64 $  sound "bev*4" # cut 1
 
 d1 $ rev $ loopAt 8 $ chop 128 $ sound "bev"
 
