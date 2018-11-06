@@ -54,8 +54,9 @@ Dirt-Samples`.
 
 Make a sequence
 
+```
 d1 $ sound "bd hh sn hh"
-
+```
 
 -- The longer the sequence, the faster it runs
 
