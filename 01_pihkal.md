@@ -127,10 +127,11 @@ Fit a subsequence into a step with square brackets:
 d1 $ sound "bd [bd cp] bd bd"
 ```
 
--- This can make for flexible time signatures:
+This can make for flexible time signatures:
 
+```{.haskell render="audio"}
 d1 $ sound "[bd bd sn:5] [bd sn:3]"
-
+```
 
 -- You can put subsequences inside subsequences:
 
