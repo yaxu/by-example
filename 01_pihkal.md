@@ -11,7 +11,7 @@ quotes:
 "red pink"
 ```
 
-The above and following figures should be read clockwise, beginning at the top. The above pattern is rendered above in a circle, in order to put Tidal's central notion of cyclic pattern in visual form --- the end of one cycle is also the beginning of the next. There is much that we can do inside these double quotes to describe complex sequences, but first, lets introduce a simple way to transform this sequence using the `fast` function to 'speed it up':
+The above pattern is rendered above in a circle, reading clockwise from the top.
 
 ```{.haskell render="colour"}
 fast 5 "red pink"
