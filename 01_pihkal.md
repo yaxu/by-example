@@ -81,7 +81,7 @@ cps 0.6
 
 You can use d1, d2, d3...d9 to play multiple sequences at the same time
 
-```{.haskell render="audio"}
+```
 d2 $ sound "sn sn:2 sn bd sn"
 ```
 
@@ -96,11 +96,11 @@ number (remember to put negative numbers in brackets)
 cps (-1)
 ```
 
--- Start it up again with a positive number
+Start it up again with a positive number
 
+```
 cps 0.6
-
-
+```
 
 
 -- Or you can ‘solo’ one channel - but be warned, you can’t ‘un-solo’ (***health warning*** ...yet)
