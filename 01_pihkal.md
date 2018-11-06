@@ -19,7 +19,7 @@ Start-up procedure:
 
 The basic format for making sound in Tidal looks like this
 
-```{.haskell render="audio" fn="g.wav"}
+```{.haskell render="audio"}
 d1 $ sound "drum”
 ```
 
@@ -31,7 +31,7 @@ d1 $ silence
 
 Pick a different sound from the same set, with `:`
 
-```{.haskell render="audio" fn="g.wav"}
+```{.haskell render="audio"}
 d1 $ sound "drum:1"
 ```
 
