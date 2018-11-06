@@ -89,10 +89,12 @@ You can stop all the running patterns with `hush`.
 
 `hush`
 
--- You can pause everything by changing the cycle length to a negative number (remember to put negative numbers in brackets)
+You can pause everything by changing the cycle length to a negative
+number (remember to put negative numbers in brackets)
 
+```
 cps (-1)
-
+```
 
 -- Start it up again with a positive number
 
