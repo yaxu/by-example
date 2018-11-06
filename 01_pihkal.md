@@ -174,10 +174,11 @@ by 'slowing it down'.
 We can also schedule patterns across cycles using `<` and `>`
 
 
-d1 $ sound "bd sn"
+```{.haskell render="audio"}
+d1 $ sound "bd <sd cp >"
+```
 
 
-d1 $ sound "<bd sn> <~ [cp cp]>"
 
 
 d1 $ sound "<bd sn> <~ [cp cp]> <bd [cp cp]>"
