@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Tidal by example</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Tidal by example</h1>
+</header>
+<h1 id="getting-started"><span class="header-section-number">1</span> Getting started</h1>
+<div class="{.lang=en_GB}">
+<p>Start-up procedure:</p>
+<ol type="1">
+<li>Launch superdirt - In Supercollider type ‘SuperDirt.start’ and run the code by holding down <code>Ctrl</code> and pressing <code>Enter</code>.</li>
+<li>Launch TidalCycles - In Atom start a new file and save it with a <code>.tidal</code> extension (e.g. <code>examples.tidal</code>)</li>
+</ol>
+</div>
+<pre><code>-- If you see a line of code with two dashes at the start like this, it’s called a comment.
+-- This is text that the computer will always ignore, so you can annotate your code.</code></pre>
+<h1 id="basic-patterns"><span class="header-section-number">2</span> Basic patterns</h1>
+<p>The basic format for making sound in Tidal looks like this</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb2-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;drum&quot;</span></a></code></pre></div>
+<p><a href="sounds/fa3b5f259d1f78cc18027cfd1791fbe1.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>You can stop making a sound using <code>silence</code>:</p>
+<pre><code>d1 $ silence</code></pre>
+<p>Pick a different sound from the same set, with <code>:</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb4-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;drum:1&quot;</span></a></code></pre></div>
+<p><a href="sounds/c53ddaca1804a87431c7a29ca64570dd.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>Some samples which come with Tidal are listed below. Try some out!</p>
+<pre><code>flick sid can metal future gabba sn mouth co gretsch mt arp h cp
+cr newnotes bass hc tabla bass0 hh bass1 bass2 oc bass3 ho odx
+diphone2 house off ht tink perc bd industrial pluck trump printshort
+jazz voodoo birds3 procshort blip drum jvbass psr wobble drumtraks koy
+rave bottle kurt latibro rm sax lighter lt arpy feel less stab ul</code></pre>
+<p>You can see what other sounds there are (or add your own) by looking in the <code>Dirt-Samples</code> folder. You can find it via the SuperCollider menu: <code>File &gt; Open user support directory &gt; downloaded-quarks &gt; Dirt-Samples</code>.</p>
+<p>Make a sequence</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb6-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd hh sn hh&quot;</span></a></code></pre></div>
+<p><a href="sounds/67302c3529d8e7a4c9daf5104134980c.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>The more steps in the sequence, the faster it goes:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb7-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd bd hh bd sn bd hh bd&quot;</span></a></code></pre></div>
+<p><a href="sounds/86f72669c4d13cf491ae92450dbbfcc4.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>This is because of the way Tidal handles time. There is a universal ‘cycle’ (sort of like a musical ‘bar’) which is always running. Tidal will play all of the sounds between the speech marks in one cycle, unless we tell it not to (we’ll learn how to do that later). You’ll also notice Tidal will space the sounds out evenly within the cycle Which means we can end up with polyrhythmic structures (more on those later).</p>
+<p>We can change the length of the cycle using <code>cps</code> (cycles per second) - this is a bit like bpm (beats per minute).</p>
+<pre><code>cps 0.6</code></pre>
+<p>You can use d1, d2, d3…d9 to play multiple sequences at the same time</p>
+<pre><code>d2 $ sound &quot;sn sn:2 sn bd sn&quot;</code></pre>
+<p>You can stop all the running patterns with <code>hush</code>.</p>
+<p><code>hush</code></p>
+<p>You can pause everything by changing the cycle length to a negative number (remember to put negative numbers in brackets).</p>
+<pre><code>cps (-1)</code></pre>
+<p>Start it up again with a positive number</p>
+<pre><code>cps 0.6</code></pre>
+<p>Or you can <code>solo</code> one channel - but be warned, you can’t <code>unsolo</code> (…but this is coming to the next version of tidal!)</p>
+<pre><code>d1 $ sound &quot;arpy cp arpy:2&quot;
+d2 $ sound &quot;sn sn:2 bd sn&quot;
+solo $ d2 $ sound &quot;sn sn:2 bd sn&quot;</code></pre>
+<p>Let add some more variety to our sequences.</p>
+<p>Add a silence/rest with <code>~</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb13-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd ~ sn:3 bd sn:5 ~ bd:2 sn:2&quot;</span></a></code></pre></div>
+<p><a href="sounds/2d3cc50e3abee3373faae5b2d1753d33.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>Fit a subsequence into a step with square brackets:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb14-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd [bd cp] bd bd&quot;</span></a></code></pre></div>
+<p><a href="sounds/95ce477f844824ae1b6ad118c7589a4b.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>This can make for flexible time signatures:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb15-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;[bd bd sn:5] [bd sn:3]&quot;</span></a></code></pre></div>
+<p><a href="sounds/fdc459925d079f2e9ab194d395763b37.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>You can put subsequences inside subsequences:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb16-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;[[bd bd] bd sn:5] [bd sn:3]&quot;</span></a></code></pre></div>
+<p><a href="sounds/b1c9e361265e846979d97ce157dd9f9a.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>Keep going..</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb17-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;[[bd [bd bd bd bd]] bd sn:5] [bd sn:3]&quot;</span></a></code></pre></div>
+<p><a href="sounds/2be642158c931d09293a7f43cc54ccd4.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>You can repeat a step with <code>*</code>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb18-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd sd*2&quot;</span></a></code></pre></div>
+<p><a href="sounds/644ec3a898e35d34deef002ffac567c3.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>This works with subsequences too:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb19-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd [sd cp]*2&quot;</span></a></code></pre></div>
+<p><a href="sounds/96f20006b9649dfa2cc94d5038c06188.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>Or you can do the opposite using <code>/</code>:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb20-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd sn/2&quot;</span></a></code></pre></div>
+<p><a href="sounds/f3a0aa5ccabdf589182d4bd773405338.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb21-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd [sn cp]/2&quot;</span></a></code></pre></div>
+<p><a href="sounds/9d52f4e84f85fbd2f32a8556c2cc3d52.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p><code>*</code> works by ‘speeding up’ a step to play it multiple times. <code>/</code> works by ‘slowing it down’.</p>
+<p>We can also schedule patterns across cycles using <code>&lt;</code> and <code>&gt;</code>:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb22-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;bd &lt;sd cp &gt;&quot;</span></a></code></pre></div>
+<p><a href="sounds/11c53b371b158b8060a9614213b8e378.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb23-1" title="1">d1 <span class="fu">$</span> sound <span class="st">&quot;&lt;bd sn&gt; &lt;~ [cp cp]&gt; &lt;bd [cp cp]&gt;&quot;</span></a></code></pre></div>
+<p><a href="sounds/a1c6bdc1c16ae8fc8656ca9a9429d572.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<h1 id="effects"><span class="header-section-number">3</span> Effects</h1>
+<p>– Tidal has lots of effects we can use to change the way things sound</p>
+<p>– ‘Vowel’ is a filter which adds a vowel sound - try a, e, i, o and u</p>
+<p>d1 $ sound “drum drum drum drum” # vowel “a”</p>
+<p>– We create patterns of effects in much the same way we create patterns of sounds</p>
+<p>d1 $ sound “drum drum drum drum” # vowel “a o e e”</p>
+<p>– Or we can use “&lt;&gt;” to schedule across cycles</p>
+<p>d1 $ sound “drum drum drum drum” # vowel “<a o e e>”</p>
+<p>– You can add a different letter to pause the vowel effect</p>
+<p>d1 $ sound “drum drum drum drum” # vowel “a o p p”</p>
+<p>– Tidal does it’s best to map patterns across to one another</p>
+<p>d1 $ sound “drum drum drum drum” # vowel “a o e”</p>
+<p>– The structure comes from the left - try swapping the parameters</p>
+<p>d1 $ vowel “a o ~ i” # sound “drum”</p>
+<p>–<strong><em>Health warning</em></strong> This is one of the changes coming up in the new Tidal - you will be able to dictate where the structure comes from</p>
+<p>– ‘Gain’ changes the volume of different sounds</p>
+<p>d1 $ sound “bd hh sn:1 hh sn:1 hh” # gain “1 0.7 0.5”</p>
+<p>– ‘Speed’ and ‘up’ are used for pitching samples</p>
+<p>– ‘Speed’ affects the speed of playback, e.g. 2 = up an octave</p>
+<p>d1 $ sound “numbers:1 numbers:2 numbers:3 numbers:4” # speed “1 1.5 2 0.5”</p>
+<p>– Or we can take the pattern from the ‘speed’ parameter</p>
+<p>d1 $ speed “1 2 4” # sound “jungbass:6”</p>
+<p>– ‘Up’ pitches the sample up in semitones, e.g. 12 = up an octave</p>
+<p>d1 $ up “0 ~ 12 24” # sound “jungbass:6”</p>
+<p>– ‘Pan’ allows us to create stereo effects - 0 = left, 0.5 = middle, 1 = right</p>
+<p>d1 $ sound “numbers:1 numbers:2 numbers:3 numbers:4” # pan “0 0.5 1”</p>
+<p>– ‘Shape’ adds distortion (but be careful - it also makes the sound much louder)</p>
+<p>d1 $ sound “kurt:4 kurt:4” # shape “0 0.78” # gain “0.7”</p>
+<p>– * feeling brave ?</p>
+<p>– http://tidalcycles.org/patterns.html#effects</p>
+<p>– delay / delaytime / delayfeedback – cutoff / resonance – room / size</p>
+<p>– ‘sine1’ is a continuous pattern following a sine curve from 0 to 1 and back</p>
+<p>d1 $ sound &quot;bd*32&quot; # gain sine1</p>
+<p>SCALE</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4. TRANSFORMING SEQUENCES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">_______________________________________________________________________________</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+</tbody>
+</table>
+<p>– We can start to make much more complex patterns using transformations – Using functions like ‘slow’ you can start to transcend the cycle</p>
+<p>– ‘Slow’ stretches the pattern over more cycles</p>
+<p>d1 $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>d1 $ slow 2 $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– ‘Fast’ squashes the pattern into less than one cycle – You might also see people writing ‘density’ - it’s the same thing! – Fast 0.5 is the same as slow 2!</p>
+<p>d1 $ fast 2 $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>d1 $ fast 0.5 $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– ‘Hurry’ is similar to fast, but also applies a speed transformation</p>
+<p>d1 $ sound “arpy arpy arpy:1 arpy:2”</p>
+<p>d1 $ hurry 2 $ sound “arpy arpy arpy:1 arpy:2”</p>
+<p>d1 $ hurry 0.5 $ sound “arpy arpy arpy:1 arpy:2”</p>
+<p>– You can reverse a pattern with ‘rev’</p>
+<p>d1 $ rev $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– Or play it forwards and then backwards with ‘palindrome’</p>
+<p>d1 $ palindrome $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– ‘Iter’ starts the pattern at a different point each cycle</p>
+<p>d1 $ iter 4 $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– ‘Every’ allows us to schedule transformations or effects in different cycles – e.g.very fourth cycle, make twice as dense:</p>
+<p>d1 $ every 4 (density 2) $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– or you could schedule an effect using #</p>
+<p>d1 $ every 4 (# vowel “a o”) $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– ‘Jux’ takes a transformation or an effect and plays it in one speaker – the original pattern plays in the other speaker</p>
+<p>d1 $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>d1 $ jux (rev) $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>d1 $ jux (hurry 2) $ sound “arpy arpy arpy:1 arpy:2”</p>
+<p>– ‘Chunk’ applies a transformation or an effect to the first part of the pattern only</p>
+<p>d1 $ chunk 4 (hurry 4) $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– Feeling brave? More than one transformation is possible - chain them together using ‘.’</p>
+<p>d1 $ jux (rev . (slow 1.5)) $ sound “arpy arpy:1 arpy:2 arpy:3”</p>
+<p>– Remember that everything is a pattern so we can apply these transformations to our effects too!</p>
+<p>d1 $ sound “jvbass [jvbass jvbass] jvbass ~” # up “1 [3 5] 7”</p>
+<p>d1 $ sound “jvbass [jvbass jvbass] jvbass ~” # iter 3 (up “1 [3 5] 7”)</p>
+<p>– what about slowing down or scaling sine and saw?</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5. DIFFERENT KINDS OF PATTERNS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">_______________________________________________________________________________</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+</tbody>
+</table>
+<p>– What is pattern, anyway? – Let’s think about different kinds of pattern and how Tidal can represent them</p>
+<p>– Cyclic / repetitive - we can use n to choose samples from a folder, this allows us to apply patterns there too!</p>
+<p>d1 $ n “0 1 2 3” # sound “arpy”</p>
+<p>– ‘Run’ is a short way of writing out sequential patterns</p>
+<p>d1 $ n (run 4) # sound “arpy”</p>
+<p>– or we can use ‘..’</p>
+<p>d1 $ n “0..4” # sound “arpy”</p>
+<p>– Symmetry</p>
+<p>d1 $ slow 2 $ n “0 1 2 3 3 2 1 0” # sound “arpy”</p>
+<p>d1 $ palindrome $ n (run 4) # sound “arpy”</p>
+<p>– Polymetric / polyrhythmic sequences – Play two subsequences at once by using square brackets (sort of like one big subsequence!) separating with a comma:</p>
+<p>d1 $ sound “[voodoo voodoo:3, arpy arpy:4 arpy:2]”</p>
+<p>– If you use curly brackets instead of square you get a different effect – With square brackets both halves of the sequence are fitted into the cycle (polyrhythm) – With curly brackets the pulse is set by the left hand pattern – The right hand pattern can then overlap (or underlap!) (polymeter)</p>
+<p>d1 $ sound “[voodoo voodoo:3, arpy arpy:4 arpy:2]”</p>
+<p>d1 $ sound “{voodoo voodoo:3, arpy arpy:4 arpy:2}”</p>
+<p>d1 $ sound “[drum bd hh bd, can can:2 can:3 can:4 can:2]”</p>
+<p>d1 $ sound “{drum bd hh bd, can can:2 can:3 can:4 can:2}”</p>
+<p>d1 $ sound “[bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5]”</p>
+<p>d1 $ sound “{bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5}”</p>
+<p>– Euclidian rhythm/Bjorklund – If you give two numbers in brackets after an element in a pattern – then Tidal will distribute the first number of sounds equally across the second number of steps – this is similar to using curly brackets</p>
+<p>d1 $ sound “bd(5,8)”</p>
+<p>– You can use this notation within a single element of a pattern:</p>
+<p>d1 $ sound &quot;bd(3,8) sn*2&quot;</p>
+<p>d1 $ sound “bd(3,8) sn(5,8)”</p>
+<p>– You can also add a third parameter, which ‘rotates’ the pattern so it starts on a different step:</p>
+<p>d1 $ sound “bd(5,8,2)”</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6. RANDOMNESS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">_______________________________________________________________________________</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+</tbody>
+</table>
+<p>– Randomness can help us introduce character into our patterns</p>
+<p>– ‘Sometimes’ works a bit like ‘every’, but instead of happening after a set period, changes have a random chance of appearing</p>
+<p>d1 $ sometimes (# speed “2”) $ sound &quot;drum*8&quot;</p>
+<p>– ‘Often’ works like sometimes but happens more often!</p>
+<p>d1 $ often (# speed “2”) $ sound &quot;drum*8&quot;</p>
+<p>– ‘Irand’ generates a random integer up to the number specified – e.g. to play a random sample</p>
+<p>d1 $ sound &quot;arpy*8&quot; # n (irand 16)</p>
+<p>– ‘Rand’ generates a random decimal between 0 and 1</p>
+<p>d1 $ sound &quot;tink*16&quot; # gain rand</p>
+<p>– You can use ‘degradeBy’ to remove random elements. The number indicates how likely a smaple is to play</p>
+<p>d1 $ degradeBy 0.2 $ sound &quot;tink*16&quot;</p>
+<p>– Or you can use ? to remove sounds with a 50% likelihood</p>
+<p>d1 $ sound “bd sn:2? bd sn?”</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7. MANIPULATING SAMPLES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">_______________________________________________________________________________</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">*****************************************************************************************************************</td>
+</tr>
+</tbody>
+</table>
+<p>– We might want to use some longer samples, but this can cause us some problems if we’re not careful – Let’s see what happens with a long sample</p>
+<p>d1 $ sound “bev”</p>
+<p>Hush</p>
+<p>– Tidal will keep triggering the sample each cycle, even if it’s very long. Even if you stop the pattern playing, you will still need to listen until the samples finish</p>
+<p>– You can use ‘cut’ to truncate the sample when the next one is triggered</p>
+<p>d1 $ sound “bev” # cut 1</p>
+<p>– The number in ‘cut’ define a group, so you can play with interference across different patterns</p>
+<p>d1 $ sound “bev ~” # cut 1</p>
+<p>d2 $ slow 4 $ sound “pebbles ~” # cut 1</p>
+<p>– ‘Legato’ also truncates samples, but using a fixed length</p>
+<p>d1 $ sound “bev ~ bev ~” # legato 1</p>
+<p>– We can also ‘chop’ samples for a ‘granular synthesis’ effect</p>
+<p>d1 $ chop 32 $ sound “bev”</p>
+<p>– ‘Striate’ is similar to ‘chop’ but organises the playback in a different way</p>
+<p>d1 $ slow 4 $ chop 4 $ sound “arpy:1 arpy:2 arpy:3 arpy:4”</p>
+<p>d1 $ slow 4 $ striate 4 $ sound “arpy:1 arpy:2 arpy:3 arpy:4”</p>
+<p>– ‘Randslice’ chops the sample into pieces and then plays back a random one each cycle</p>
+<p>d1 $ randslice 32 $ sound “bev”</p>
+<p>– We can also use ‘loopAt’ to fit samples to a set number of cycles:</p>
+<p>d1 $ loopAt 8 $ sound “bev”</p>
+<p>– As always we can add patterns and transformations to these functions, or combine them for interesting effects</p>
+<p>d1 $ loopAt “&lt;8 4 16&gt;” $ chop 64 $ sound &quot;bev*4&quot; # cut 1</p>
+<p>d1 $ rev $ loopAt 8 $ chop 128 $ sound “bev”</p>
+<h2 id="transforming-sequences"><span class="header-section-number">3.1</span> Transforming sequences</h2>
+<p>There are two parts to Tidal, a ‘little language’ for describing sequences, and a library of functions for transforming them as patterns. The little language for sequences is denoted with double quotes:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb24"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb24-1" title="1"><span class="st">&quot;red pink&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/50873b3bb688488750906c40a46826b9_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>The above pattern is rendered above in a circle, reading clockwise from the top. Lets try adding a transformation.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb25"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb25-1" title="1">fast <span class="dv">5</span> <span class="st">&quot;red pink&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/37208a0e8cfff32865fdc86a9fcaee5a_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>Now we can see five repetitions of red and pink within a single cycle.</p>
+<p>The number <code>5</code> in the above, is also a pattern. Alone, it simply repeats itself, once per cycle, forever. But, we can also put a sequence there:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb26"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb26-1" title="1">fast <span class="st">&quot;5 3&quot;</span> <span class="st">&quot;red pink&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/31ba17b55f3bab9441dc5425f1521c39_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>Now the pattern is speeded up by five in the first half, and by three in the second half.</p>
+<p>In the above, the <code>fast</code> function takes two patterns as input, and combines them to return a new pattern. Pattern transformations tend to operate relative to cycles, but that does not mean that successive cycles are identical. For example in the following, <code>every 3</code> is used to apply the function <code>fast &quot;5 3&quot;</code> to <code>&quot;red pink&quot;</code> as above, but only every third cycle. The first six cycles of the resulting pattern are shown below, so that you can see this change over time.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb27"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb27-1" title="1">every <span class="dv">3</span> (fast <span class="st">&quot;5 3&quot;</span>) <span class="st">&quot;red pink&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><p><img src="figures/0f31adfa19d61800f23a4b782a9934c6_0.png" title="fig:" width="220" /><img src="figures/0f31adfa19d61800f23a4b782a9934c6_1.png" title="fig:" width="220" /><img src="figures/0f31adfa19d61800f23a4b782a9934c6_2.png" title="fig:" width="220" /><img src="figures/0f31adfa19d61800f23a4b782a9934c6_3.png" title="fig:" width="220" /><img src="figures/0f31adfa19d61800f23a4b782a9934c6_4.png" title="fig:" width="220" /><img src="figures/0f31adfa19d61800f23a4b782a9934c6_5.png" title="fig:" width="220" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>We can also squeeze the above six cycles into one, again by ‘speeding it up’, so that each cycle is identical once more:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb28"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb28-1" title="1">fast <span class="dv">6</span> (every <span class="dv">3</span> (fast <span class="st">&quot;5 3&quot;</span>) <span class="st">&quot;red pink&quot;</span>)</a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><p><img src="figures/96fa9a9f0b36fd80ef2c4e65af000f35_0.png" title="fig:" width="220" /><img src="figures/96fa9a9f0b36fd80ef2c4e65af000f35_1.png" title="fig:" width="220" /><img src="figures/96fa9a9f0b36fd80ef2c4e65af000f35_2.png" title="fig:" width="220" /><img src="figures/96fa9a9f0b36fd80ef2c4e65af000f35_3.png" title="fig:" width="220" /><img src="figures/96fa9a9f0b36fd80ef2c4e65af000f35_4.png" title="fig:" width="220" /><img src="figures/96fa9a9f0b36fd80ef2c4e65af000f35_5.png" title="fig:" width="220" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>Already we can see a strong part of Tidal’s flexibility; it is highly <em>composable</em>. Functions like <code>fast 6</code> take a pattern as input, and return a new pattern as output, so that it is straightforward to compose multiple functions together into more complex transformations, as we have done above. Furthermore, we did not have to write any code to align <code>&quot;5 3&quot;</code> with <code>&quot;red pink&quot;</code>; in conventional terms, Tidal is <em>declarative</em>, in the sense that it takes care of the mechanics of pattern composition for us.</p>
+<h2 id="an-aside-imperative-declarative-and-kairotic-programming"><span class="header-section-number">3.2</span> An aside: Imperative, declarative and kairotic programming</h2>
+<p>Different techniques in programming are generally classified into either imperative or declarative programming. Imperative programming is where we describe a procedure in terms of how it is done. The usual everyday example of such a program is a cake recipe. Instead of describing a cake, a recipe gives a step-by-step procedure for combining different elements, where a cake is the (hopeful) result. In declarative programming, we instead describe <em>what</em> we want, and leave the job of <em>how</em> this is achieved to the computer. From the point of view of pattern-making, this distinction is already problematic in itself, in that <em>how</em> we make something is part of what it <em>is</em> <span class="citation" data-cites="mclean_artist-programmers_2011">[@mclean_artist-programmers_2011, pp 75-77]</span>.</p>
+<p>Here we suggest that <em>Kairotic coding</em> is a third approach which sits between both declarative and imperative programming. This is akin to answering neither <em>how</em> or <em>what</em> questions, but instead focussing on programmers asking a question themselves: <em>what if</em>?. So they make changes to the structure of code, perceive the end result, and then make their next change to the code in response. This kairotic approach, where the programmers enter the timeline of their code, has become embedded in the practice-led design of TidalCycles.</p>
+<h2 id="event-time-in-polyphonic-and-polymetric-sequencing"><span class="header-section-number">3.3</span> Event time in polyphonic and Polymetric sequencing</h2>
+<p>We have already learned the standard unit of time in Tidal is the cycle. One impact of this is that if you add additional steps to a sequence, the steps will become shorter in duration, so that they are contained exactly within a single cycle:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb29" data-render="colour"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb29-1" title="1"><span class="st">&quot;red pink orange&quot;</span></a></code></pre></div></td>
+<td><div class="sourceCode" id="cb30" data-render="colour"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb30-1" title="1"><span class="st">&quot;red pink orange blue lightblue&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/8d44d9ba65d2441320df1e56ed6e3f1c_0.png" width="220" />
+</figure></td>
+<td><figure>
+<img src="figures/31f9fe26b23f94d88f8bc36dc90e108f_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>In the musical domain, this means that the more events you add to a pattern, the faster they will be played, in order to fit them into a cycle:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb31-1" title="1">sound <span class="st">&quot;bd cp sd&quot;</span></a></code></pre></div>
+<p><a href="sounds/a.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb32-1" title="1">sound <span class="st">&quot;bd cp sd mt lt&quot;</span></a></code></pre></div>
+<p><a href="sounds/b.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>In other words, timing in Tidal is not based around a notion of a fixed ‘beat’ duration, but on higher level cycles. This lends metrical flexibility, so for example it is possible to break down individual steps into subcycles, using square brackets:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb33"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb33-1" title="1"><span class="st">&quot;red [orange green] blue [lightblue yellow black]&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/4fc0111fd8b9dd246143d81c31dd0390_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>It is also possible to place more than one subcycle inside a single step:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb34"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb34-1" title="1"><span class="st">&quot;[orange purple, lightblue yellow black]&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/7c106624c5ef76b59a249f681041c242_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>In the above we can see that <code>lightblue yellow black</code> fills the same span as <code>orange purple</code>. It is not significant that one subcycle is placed on the outside of the other; in musical terms this simply indicates that they form a polyphony, happening at the same time. We can change this behaviour by instead using curly brackets to denote the subsequences:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb35"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb35-1" title="1"><span class="st">&quot;{orange purple, lightblue yellow black}&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><p><img src="figures/f354a0aea5f18c3aaf1865e958f751d9_0.png" title="fig:" width="220" /><img src="figures/f354a0aea5f18c3aaf1865e958f751d9_1.png" title="fig:" width="220" /><img src="figures/f354a0aea5f18c3aaf1865e958f751d9_2.png" title="fig:" width="220" /><img src="figures/f354a0aea5f18c3aaf1865e958f751d9_3.png" title="fig:" width="220" /><img src="figures/f354a0aea5f18c3aaf1865e958f751d9_4.png" title="fig:" width="220" /><img src="figures/f354a0aea5f18c3aaf1865e958f751d9_5.png" title="fig:" width="220" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>We can see that the <em>steps</em> rather than cycles now align, so that <code>orange purple</code> lines up with <code>lightblue yellow</code> in the first cycle. We can also see what it means to be a ‘subcycle’, as the subcycle continues where it left off, over successive cycles. From <code>lightblue yellow black</code>, only the first two colours are used in the first cycle to match with the two colours in <code>orange purple</code>, so on the second cycle it continues with <code>black</code>, cycling back to <code>lightblue</code> for its second value. We end up with a structure that repeats every third cycle.</p>
+<p>Lets listen to the equivalent in the sound domain, listening to a two-step bass drum (<code>bd</code>) - clap (<code>cp</code>) sequence against a low (<code>lt</code>) - mid (<code>mt</code>) - high tom (<code>ht</code>) sequence:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb36-1" title="1">sound <span class="st">&quot;[bd cp, lt mt ht]&quot;</span></a></code></pre></div>
+<p><a href="sounds/c.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb37-1" title="1">sound <span class="st">&quot;{bd cp, lt mt ht}&quot;</span></a></code></pre></div>
+<p><a href="sounds/d.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>Subcycles can be placed within subcycles. The following contains a subcycle with three steps (with a span of one third of a cycle each), of which the middle step is broken down further into two substeps (one sixth of a cycle each):</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb38"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb38-1" title="1"><span class="st">&quot;red [orange [black green] brown] blue&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/4438bf609892c898debb34e4ceac7a12_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<h2 id="rests-gaps-and-stretches"><span class="header-section-number">3.4</span> Rests, gaps and stretches</h2>
+<p>Silence is of course central to music, and in Tidal sequences you can insert empty gaps with the <code>~</code> character.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb39"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb39-1" title="1"><span class="st">&quot;red blue ~ orange [purple ~] green&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/03322a967a8f3e312ae9b46d2bba680b_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively a <code>_</code> character will stretch the previous step:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb40"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb40-1" title="1"><span class="st">&quot;red blue _ orange [purple ~] green&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><figure>
+<img src="figures/e49e2c5dd699a76d60c18b9f2dbcc6f4_0.png" width="220" />
+</figure></td>
+</tr>
+</tbody>
+</table>
+<p>You can also use a <code>?</code> character to replace a step with silence around 50% of the time, varying from one cycle to the next:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb41"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb41-1" title="1">fast <span class="dv">12</span> <span class="st">&quot;red blue?&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><p><img src="figures/ec988d7e0cf0dba9a11c60dab1290b26_0.png" title="fig:" width="220" /><img src="figures/ec988d7e0cf0dba9a11c60dab1290b26_1.png" title="fig:" width="220" /><img src="figures/ec988d7e0cf0dba9a11c60dab1290b26_2.png" title="fig:" width="220" /><img src="figures/ec988d7e0cf0dba9a11c60dab1290b26_3.png" title="fig:" width="220" /><img src="figures/ec988d7e0cf0dba9a11c60dab1290b26_4.png" title="fig:" width="220" /><img src="figures/ec988d7e0cf0dba9a11c60dab1290b26_5.png" title="fig:" width="220" /></p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="manipulating-time"><span class="header-section-number">3.5</span> Manipulating time</h2>
+<p>Music is of course a time-based artform, and in Tidal, time is malleable — it both flows in cycles, and develops over time. It can be reversed, shifted forward into the future or back into the past, expanded and contracted, chopped up and rearranged, and subdivided to practically any depth.</p>
+<p>We have so far focussed on sequences, but there is a much more to pattern. Let us move on to explore different kinds of patterning, all of which take one or more existing patterns and transform them. The nature of the pattern transformation might be perceivable by the listener, or perhaps only give them a sense of order amongst chaos, but because there is a clear structure in the creation of pattern, the sonic environment that results has the possibility to be an engaging place, explored through the process of listening. Of course, everyone listens differently, and so a pattern is not necessarily a puzzle to be solved, but an environment to be explored.</p>
+<p>Many computer music systems represent music as <em>lists</em> of events, an approach which certainly has its advantages. However, Tidal instead represents music as a pure, mathematical <em>function</em>, with a timespan as input, and returning events active within that timespan as output. Each event consists of a value, and a timespan during which the event is active. This approach, a form of Functional Reactive Programming <span class="citation" data-cites="hudak_haskell_2000">[@hudak_haskell_2000]</span>, allows the temporal structure of Tidal patterns to be efficiently manipulated without being calculated, either as a discrete or continuous signal, and separately from the events which are represented within the signal <span class="citation" data-cites="mclean_making_2014">[@mclean_making_2014]</span>. Time itself is represented as a rational number, lending itself to precise subdivision. It is not important to understand Tidal’s inner representation of time in detail, but worth noting that much of the flexibility seen in the following stems from Tidal’s focus on composing together functions of time, rather than linear procedures over data.</p>
+<p>We have already seen the <code>fast</code> function for ‘speeding up’ a pattern. The <code>&lt;~</code> and <code>~&gt;</code> operators manipulate time a different way, by moving patterns backwards and forwards in time. With Tidal’s cyclic notion of time, in practice this results in <em>rotating</em> a pattern. The following pattern shows a quarter rotation, every third cycle:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb42"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb42-1" title="1">every <span class="dv">3</span> (<span class="fl">0.25</span> <span class="fu">&lt;~</span>) <span class="fu">$</span> <span class="st">&quot;red pink grey purple&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><p><img src="figures/93e3f351187087f0e97f03eed3cbfe51_0.png" title="fig:" width="220" /><img src="figures/93e3f351187087f0e97f03eed3cbfe51_1.png" title="fig:" width="220" /><img src="figures/93e3f351187087f0e97f03eed3cbfe51_2.png" title="fig:" width="220" /><img src="figures/93e3f351187087f0e97f03eed3cbfe51_3.png" title="fig:" width="220" /><img src="figures/93e3f351187087f0e97f03eed3cbfe51_4.png" title="fig:" width="220" /><img src="figures/93e3f351187087f0e97f03eed3cbfe51_5.png" title="fig:" width="220" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>iter</code> function also shifts time, but keeps shifting it from one cycle to the next, until the cycle returns back to where it started. This takes place over a given number of cycles, which in the following is four:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb43"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb43-1" title="1">iter <span class="dv">4</span> <span class="st">&quot;red pink grey purple&quot;</span></a></code></pre></div></td>
+</tr>
+<tr class="even">
+<td><p><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_0.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_1.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_2.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_3.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_4.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_5.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_6.png" title="fig:" width="220" /><img src="figures/47d11d0d3ec3db9f22633842d3ce7e35_7.png" title="fig:" width="220" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>Lets hear some sound-based examples of <code>&lt;~</code> and <code>iter</code>:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb44-1" title="1">iter <span class="dv">4</span> <span class="fu">$</span> sound <span class="st">&quot;bd ht sd cp&quot;</span></a></code></pre></div>
+<p><a href="sounds/e.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb45-1" title="1">every <span class="dv">3</span> (<span class="fl">0.25</span> <span class="fu">&lt;~</span>) <span class="fu">$</span> sound <span class="st">&quot;bd ht sd cp&quot;</span></a></code></pre></div>
+<p><a href="sounds/f.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<p>For a complete introduction to the the pattern transformations available in Tidal, please refer to the website <a href="http://tidalcycles.org">http://tidalcycles.org</a>.</p>
+<h2 id="patterning-multiple-dimensions-of-sound"><span class="header-section-number">3.6</span> Patterning multiple dimensions of sound</h2>
+<p>In terms of how it is perceived, sound is multi-dimensional. A modern synthesiser may have a keyboard providing a pitch dimension, but will also have a plethora of knobs and sliders for exploring further timbral dimensions. Accordingly, Tidal allows different aspects of sound to be patterned independently. The following example demonstrates independent patterning of the <code>legato</code> (relative duration) and <code>lpf</code> (low pass filter) parameters, where the structure being defined by the <code>n</code> (note) rather than <code>sound</code> parameter.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb46-1" title="1">off <span class="fl">0.125</span> (<span class="fu">|+|</span> n <span class="st">&quot;-12&quot;</span>) <span class="fu">$</span></a>
+<a class="sourceLine" id="cb46-2" title="2">  jux rev <span class="fu">$</span> n (off <span class="st">&quot;&lt;1%8 1%4&gt;&quot;</span> (<span class="fu">+</span> chord <span class="st">&quot;&lt;major minor major&gt;&quot;</span>)</a>
+<a class="sourceLine" id="cb46-3" title="3">               (palindrome <span class="fu">$</span> <span class="st">&quot;&lt;c(3,8) f(3,8) g(3,8) c6(3,8)&gt;&quot;</span>))</a>
+<a class="sourceLine" id="cb46-4" title="4">  <span class="fu">#</span> sound <span class="st">&quot;superpiano&quot;</span></a>
+<a class="sourceLine" id="cb46-5" title="5">  <span class="fu">#</span> legato (scale <span class="fl">0.5</span> <span class="dv">2</span> saw)</a>
+<a class="sourceLine" id="cb46-6" title="6">  <span class="fu">#</span> lpf <span class="st">&quot;&lt;300 [1000 700] 2000&gt;&quot;</span></a>
+<a class="sourceLine" id="cb46-7" title="7">  <span class="fu">#</span> lpq <span class="fl">0.2</span></a></code></pre></div>
+<p><a href="sounds/g.wav"><img src="playcirc.png" title="fig:" width="80" /></a></p>
+<!--
+Local Variables:
+eval: (visual-line-mode)
+End:
+-->
+</body>
+</html>
