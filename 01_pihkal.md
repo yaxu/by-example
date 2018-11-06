@@ -54,7 +54,7 @@ Dirt-Samples`.
 
 Make a sequence
 
-```
+```{.haskell render="audio"}
 d1 $ sound "bd hh sn hh"
 ```
 
