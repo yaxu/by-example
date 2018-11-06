@@ -29,7 +29,7 @@ You can stop making a sound using `silence`:
 d1 $ silence
 ```
 
-Pick a different sound from the same set, with ':'
+Pick a different sound from the same set, with `:`
 
 ```
 d1 $ sound "drum:1"
