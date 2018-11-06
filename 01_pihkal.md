@@ -49,10 +49,10 @@ rave bottle kurt latibro rm sax lighter lt arpy feel less stab ul
 You can see what other sounds there are (or add your own) by looking
 in the `Dirt-Samples` folder. You can find it via the SuperCollider
 menu: `File > Open user support directory > downloaded-quarks >
-Dirt-Samples`
+Dirt-Samples`.
 
 
--- Make a sequence
+Make a sequence
 
 d1 $ sound "bd hh sn hh"
 
