@@ -79,16 +79,11 @@ second) - this is a bit like bpm (beats per minute).
 cps 0.6
 ```
 
---You can use d1, d2, d3...d9 to play multiple sequences at the same time
+You can use d1, d2, d3...d9 to play multiple sequences at the same time
 
--- ***health warning*** this will change in the new Tidal
-
--- Channels will be called whatever you like as long as you use speech marks.  
--- e.g. "d1", "kick", "hippopotamus" etc
-
-
+```{.haskell render="audio"}
 d2 $ sound "sn sn:2 sn bd sn"
-
+```
 
 
 
