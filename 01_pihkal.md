@@ -171,7 +171,7 @@ d1 $ sound "bd [sn cp]/2"
 by 'slowing it down'.
 
 
-We can also schedule patterns across cycles using `<` and `>`
+We can also schedule patterns across cycles using `<` and `>`:
 
 
 ```{.haskell render="audio"}
