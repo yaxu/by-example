@@ -21,11 +21,15 @@ fast 5 "red pink"
 Now we can see five repetitions of red and pink within a single cycle. 
 
 
-The number `5` in the above, is also a pattern. When we give a pattern as a 'bare' number like this, it simply repeats that number, once per cycle. The below gives a sequence of two numbers to `fast` instead, so that the first half of each cycle is 'speeded up' by a factor of five, and the second half by a factor of three. 
+The number `5` in the above, is also a pattern. Alone, it simply
+repeats itself, once per cycle, forever. But, we can also put a
+sequence there:
 
 ```{.haskell render="colour"}
 fast "5 3" "red pink"
 ```
+
+Now the pattern is speeded up by five in the first half, and by three in the second half.
 
 In the above, the `fast` function takes two patterns as input, and combines them to return a new pattern. Pattern transformations tend to operate relative to cycles, but that does not mean that successive cycles are identical. For example in the following, `every 3` is used to apply the function `fast "5 3"` to `"red pink"` as above, but only every third cycle. The first six cycles of the resulting pattern are shown below, so that you can see this change over time.
 
