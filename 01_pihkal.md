@@ -46,9 +46,10 @@ rave bottle kurt latibro rm sax lighter lt arpy feel less stab ul
 ```
 
 
---You can see what other sounds there are or add your own using the Dirt-Samples folder
--- In the menu in SuperCollider
--- File > Open user support directory > downloaded-quarks > Dirt-Samples
+You can see what other sounds there are (or add your own) by looking
+in the `Dirt-Samples` folder. You can find it via the SuperCollider
+menu: `File > Open user support directory > downloaded-quarks >
+Dirt-Samples`
 
 
 -- Make a sequence
