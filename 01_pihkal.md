@@ -139,15 +139,13 @@ You can put subsequences inside subsequences:
 d1 $ sound "[[bd bd] bd sn:5] [bd sn:3]"
 ```
 
--- Keep going..
+Keep going..
 
-
+```{.haskell render="audio"}
 d1 $ sound "[[bd [bd bd bd bd]] bd sn:5] [bd sn:3]"
+```
 
-
-
-
--- You can get a similar effect using *
+You can get a similar effect using *
 
 
 d1 $ sound "bd sn*2”
