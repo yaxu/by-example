@@ -133,10 +133,11 @@ This can make for flexible time signatures:
 d1 $ sound "[bd bd sn:5] [bd sn:3]"
 ```
 
--- You can put subsequences inside subsequences:
+You can put subsequences inside subsequences:
 
+```{.haskell render="audio"}
 d1 $ sound "[[bd bd] bd sn:5] [bd sn:3]"
-
+```
 
 -- Keep going..
 
