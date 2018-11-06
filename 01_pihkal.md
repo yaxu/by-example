@@ -20,7 +20,7 @@ Start-up procedure:
 The basic format for making sound in Tidal looks like this
 
 ```
-d1 $ sound "bd”
+d1 $ sound "drum”
 ```
 
 You can stop making a sound using `silence`:
@@ -29,10 +29,11 @@ You can stop making a sound using `silence`:
 d1 $ silence
 ```
 
--- Pick a different sound from the same set, with ':'
+Pick a different sound from the same set, with ':'
 
-d1 $ sound "bd:1"
-
+```
+d1 $ sound "drum:1"
+```
 
 -- * Some samples which come with Tidal are listed below.
 
