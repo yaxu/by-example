@@ -72,11 +72,11 @@ also notice Tidal will space the sounds out evenly within the cycle
 Which means we can end up with polyrhythmic structures (more on those
 later).
 
--- We can change the length of the cycle using ‘cps’ (cycles per second) - this is a bit like bpm
+We can change the length of the cycle using ‘cps’ (cycles per second) - this is a bit like bpm
 
-
+```
 cps 0.6
-
+```
 
 
 
