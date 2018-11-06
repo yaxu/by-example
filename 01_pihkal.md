@@ -117,8 +117,9 @@ Let’s try adding some more variety to our sequences.
 
 Add a silence/rest with '~'
 
+```{.haskell render="audio"}
 d1 $ sound "bd ~ sn:3 bd sn:5 ~ bd:2 sn:2"
-
+```
 
 
 
