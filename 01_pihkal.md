@@ -23,11 +23,11 @@ The basic format for making sound in Tidal looks like this
 d1 $ sound "bd”
 ```
 
+You can stop making a sound using `silence`:
 
--- Stop making a sound using ‘silence’
-
-d1 silence
-
+```
+d1 $ silence
+```
 
 -- Pick a different sound from the same set, with ':'
 
