@@ -85,14 +85,9 @@ You can use d1, d2, d3...d9 to play multiple sequences at the same time
 d2 $ sound "sn sn:2 sn bd sn"
 ```
 
+You can stop all the running patterns with `hush`.
 
-
--- Hush stops everything at once
-
-Hush
-
-
-
+`hush`
 
 -- You can pause everything by changing the cycle length to a negative number (remember to put negative numbers in brackets)
 
