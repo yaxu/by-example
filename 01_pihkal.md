@@ -79,8 +79,6 @@ second) - this is a bit like bpm (beats per minute).
 cps 0.6
 ```
 
-
-
 --You can use d1, d2, d3...d9 to play multiple sequences at the same time
 
 
