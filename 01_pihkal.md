@@ -178,7 +178,6 @@ We can also schedule patterns across cycles using `<` and `>`:
 d1 $ sound "bd <sd cp >"
 ```
 
-
 ```{.haskell render="audio"}
 d1 $ sound "<bd sn> <~ [cp cp]> <bd [cp cp]>"
 ```
