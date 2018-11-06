@@ -12,9 +12,10 @@ Start-up procedure:
    `.tidal` extension (e.g. `examples.tidal`)
 :::::
 
-::::: {lang="jp"}
+::::: {lang="jp_JP"}
 
 :::::
+
 
 ```
 -- If you see a line of code with two dashes at the start like this, it’s called a comment.
