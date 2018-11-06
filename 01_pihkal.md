@@ -58,10 +58,11 @@ Make a sequence
 d1 $ sound "bd hh sn hh"
 ```
 
--- The longer the sequence, the faster it runs
+The more steps in the sequence, the faster it goes:
 
+```{.haskell render="audio"}
 d1 $ sound "bd bd hh bd sn bd hh bd"
-
+```
 
 -- This is because of the way Tidal handles time.  
 -- There is a universal ‘cycle’ (sort of like a bar) which is always running.
