@@ -103,7 +103,8 @@ cps 0.6
 ```
 
 
--- Or you can ‘solo’ one channel - but be warned, you can’t ‘un-solo’ (***health warning*** ...yet)
+Or you can `solo` one channel - but be warned, you can’t `unsolo`
+(...but this is coming to the next version of tidal!)
 
 
 d1 $ sound "arpy ~ arpy:2"
