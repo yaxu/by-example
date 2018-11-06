@@ -3,7 +3,7 @@
 
 # Getting started
 
-::::: {#special .sidebar}
+::::: {#special .sidebar key="value"}
 Start-up procedure:
 
 1. Launch superdirt - In Supercollider type ‘SuperDirt.start’ and run
