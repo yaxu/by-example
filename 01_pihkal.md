@@ -145,20 +145,30 @@ Keep going..
 d1 $ sound "[[bd [bd bd bd bd]] bd sn:5] [bd sn:3]"
 ```
 
-You can get a similar effect using `*`:
+You can repeat a step with `*`:
 
 ```{.haskell render="audio"}
-d1 $ sound "bd sn*2”
+d1 $ sound "bd sd*2”
 ```
 
+This works with subsequences too:
 
+```{.haskell render="audio"}
+d1 $ sound "bd [sd cp]*2”
+```
 
--- Or the opposite using /
+Or you can do the opposite using `/`:
 
-
+```{.haskell render="audio"}
 d1 $ sound "bd sn/2”
+```
 
+```{.haskell render="audio"}
+d1 $ sound "bd [sn cp]/2”
+```
 
+`*` works by 'speeding up' a step to play it multiple times. `/` works
+by 'slowing it down'.
 
 
 -- We can also schedule patterns across cycles using < and >
