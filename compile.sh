@@ -4,4 +4,5 @@ if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
 
-pandoc -s 0*.md --template=templates/template.latex --from markdown+auto_identifiers -V colorlinks --number-sections --pdf-engine=xelatex --variable mainfont="Brill" --dpi=300 --filter render.hs -o tidal-by-example.pdf
+# --template=templates/template.latex 
+pandoc -s 0*.md --from markdown+auto_identifiers -V colorlinks --number-sections --pdf-engine=xelatex --variable mainfont="Linux Libertine O" --dpi=300 --filter render.hs -o tidal-by-example.pdf
