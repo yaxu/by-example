@@ -31,7 +31,7 @@ d1 $ silence
 
 Pick a different sound from the same set, with `:`
 
-```
+```{.haskell render="audio" fn="g.wav"}
 d1 $ sound "drum:1"
 ```
 
