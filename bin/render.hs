@@ -1,4 +1,4 @@
-#!/usr/bin/runhaskell
+#!/usr/local/bin/runhaskell
 
 import Sound.Tidal.Context
 import Sound.Tidal.VisCycle
