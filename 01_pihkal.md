@@ -145,7 +145,7 @@ Keep going..
 d1 $ sound "[[bd [bd bd bd bd]] bd sn:5] [bd sn:3]"
 ```
 
-You can get a similar effect using *
+You can get a similar effect using `*`:
 
 
 d1 $ sound "bd sn*2”
