@@ -9,9 +9,8 @@ Start-up procedure:
 2. Launch TidalCycles - In Atom start a new file and save it with a `.tidal` extension (e.g. `examples.tidal`)
 
 ```
--- If you see a line of code with two dashes at the start like this, it’s called a comment.  
--- This is text that the computer will ignore, so you can annotate your code.  
--- We’ll use comments in the worksheet to explain what’s going on and what to do next
+-- If you see a line of code with two dashes at the start like this, it’s called a comment.
+-- This is text that the computer will ignore, so you can annotate your code.
 ```
 
 
