@@ -13,7 +13,10 @@ Start-up procedure:
 :::::
 
 ::::: {lang="jp_JP"}
-
+1. Superdirtを起動します - Supercolliderで 'SuperDirt.start'と入力して実行します
+    `Ctrl`を押しながら` Enter`を押してコードを書きます。
+2. TidalCyclesを起動する - Atomで新しいファイルを開始し、
+    `.tidal`拡張子（例えば` examples.tidal`）
 :::::
 
 
