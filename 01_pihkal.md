@@ -107,14 +107,11 @@ Or you can `solo` one channel - but be warned, you can’t `unsolo`
 (...but this is coming to the next version of tidal!)
 
 
+```
 d1 $ sound "arpy ~ arpy:2"
-
-
 d2 $ sound "sn sn:2 bd sn”
-
-
 solo $ d2 $ sound "sn sn:2 bd sn”
-
+```
 
 --Let’s try adding some more variety to our patterns
 -- Add a silence/rest with '~'
