@@ -6,16 +6,16 @@
 ::::: {lang="en_GB"}
 Start-up procedure:
 
-1. Launch superdirt - In Supercollider type ‘SuperDirt.start’ and run
+1. Launch superdirt - In Supercollider type `SuperDirt.start` and run
    the code by holding down `Ctrl` and pressing `Enter`.
 2. Launch TidalCycles - In Atom start a new file and save it with a
    `.tidal` extension (e.g. `examples.tidal`)
 :::::
 
 ::::: {lang="jp_JP"}
-1. Superdirtを起動します - Supercolliderで 'SuperDirt.start'と入力して実行します
-    `Ctrl`を押しながら` Enter`を押してコードを書きます。
-2. TidalCyclesを起動する - Atomで新しいファイルを開始し、
+1. Superdirtを起動します - Supercollider で `SuperDirt.start` と入力して実行します
+    `Ctrl` を押しながら `Enter` を押してコードを書きます。
+2. TidalCyclesを起動する - Atom で新しいファイルを開始し、
     `.tidal`拡張子（例えば` examples.tidal`）
 :::::
 
