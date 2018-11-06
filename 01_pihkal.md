@@ -11,7 +11,8 @@ quotes:
 "red pink"
 ```
 
-The above pattern is rendered above in a circle, reading clockwise from the top.
+The above pattern is rendered above in a circle, reading clockwise
+from the top. Lets try adding a transformation.
 
 ```{.haskell render="colour"}
 fast 5 "red pink"
