@@ -5,7 +5,7 @@
 
 Start-up procedure:
 
-1. Launch superdirt - In Supercollider type ‘SuperDirt.start’ and run the code with Ctrl+Enter
+1. Launch superdirt - In Supercollider type ‘SuperDirt.start’ and run the code by holding down `Ctrl` and pressing `Enter`.
 2. Launch TidalCycles - In Atom start a new file and save it with a `.tidal` extension (e.g. `examples.tidal`)
 -- From the menu click boot>TidalCycles
 
