@@ -113,7 +113,7 @@ d2 $ sound "sn sn:2 bd sn”
 solo $ d2 $ sound "sn sn:2 bd sn”
 ```
 
-Let’s try adding some more variety to our patterns.
+Let’s try adding some more variety to our sequences.
 
 Add a silence/rest with '~'
 
